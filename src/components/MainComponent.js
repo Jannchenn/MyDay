@@ -3,7 +3,6 @@ import Home from './HomeComponent';
 import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
-import { View, Platform, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, DrawerItems, SafeAreaView } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
@@ -20,7 +19,7 @@ const HomeNavigator = createStackNavigator({
       headerTintColor: "#fff",
       headerLeft: <Icon name="menu" size={24}
         color= 'white'
-        onPress={ () => navigation.toggleDrawer() } />     
+        onPress={ () => navigation.toggleDrawer } />     
     })
 });
 
@@ -37,7 +36,7 @@ const GuideNavigator = createStackNavigator({
       headerTintColor: "#fff",
       headerLeft: <Icon name="menu" size={24}
         color= 'white'
-        onPress={ () => navigation.toggleDrawer() } />  
+        onPress={ () => navigation.toggleDrawer } />  
     })
 });
 
@@ -54,7 +53,7 @@ const EntryNavigator = createStackNavigator({
       headerTintColor: "#fff",
       headerLeft: <Icon name="menu" size={24}
         color= 'white'
-        onPress={ () => navigation.toggleDrawer() } />  
+        onPress={ () => navigation.toggleDrawer } />  
     })
 });
 
@@ -71,7 +70,7 @@ const StatsNavigator = createStackNavigator({
       headerTintColor: "#fff",
       headerLeft: <Icon name="menu" size={24}
         color= 'white'
-        onPress={ () => navigation.toggleDrawer() } />  
+        onPress={ () => navigation.toggleDrawer } />  
     })
 });
 
