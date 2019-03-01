@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
+import {Calendar, CalendarList} from 'react-native-calendars';
 
 class Home extends Component {
 
@@ -9,7 +10,15 @@ class Home extends Component {
 
     render() {
         return(
-            <View><Text>Home Component</Text></View>
+            <CalendarList
+                // Enable horizontal scrolling, default = false
+                horizontal={true}
+                // Enable paging on horizontal, default = false
+                pagingEnabled={true}
+                // Set custom calendarWidth.
+                calendarWidth={Dimensions.get('window').width}
+                maxDate = {new Date()}
+            />
         );
     }
 }
