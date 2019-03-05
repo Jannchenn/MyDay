@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
 import {Calendar, CalendarList} from 'react-native-calendars';
+import DailySummaryComponent from '../screens/DailySummaryComponent';
+
+// let thoughtRef = db.ref('/thought');
+// let tagsRef = db.ref('/tag');
+
+var d = "";
 
 class Home extends Component {
 
@@ -8,19 +14,29 @@ class Home extends Component {
         title: 'Home'
     };
 
+    constructor(props) {
+        super(props);
+        this.d = "";
+    }
+
     render() {
         return(
-            <CalendarList
-                // Enable horizontal scrolling, default = false
-                horizontal={true}
-                // Enable paging on horizontal, default = false
-                pagingEnabled={true}
-                // Set custom calendarWidth.
-                calendarWidth={Dimensions.get('window').width}
-                maxDate = {new Date()}
-            />
+            <View>
+                <CalendarList
+                    // Enable horizontal scrolling, default = false
+                    horizontal={true}
+                    // Enable paging on horizontal, default = false
+                    pagingEnabled={true}
+                    // Set custom calendarWidth.
+                    calendarWidth={Dimensions.get('window').width}
+                    maxDate = {new Date()}
+                    onDayPress={(day)=>{this.d = "ddd"}}
+                />
+                <DailySummaryComponent day="kkk"/>
+            </View>
         );
     }
 }
+
 
 export default Home;

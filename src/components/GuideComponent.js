@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { db } from '../config';
-import FoodComponent from './FoodComponent';
+import FoodComponent from '../screens/FoodComponent';
 
 let foodRef = db.ref('/food');
 
