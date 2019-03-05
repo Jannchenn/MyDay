@@ -56,12 +56,19 @@ const AppNavigator = createStackNavigator({
       screen: HomeScreen,
     },
   }, {
+    defaultNavigationOptions: {
+       header: null }
+ },{
       initialRouteName: 'Start',
   });
   
 const AppContainer1 = createAppContainer(AppNavigator);
 
 class Start extends Component {
+
+    static defaultNavigationOptions = {
+        title: 'Start'
+    };
 
     render() {
         return(
