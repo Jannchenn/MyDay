@@ -3,6 +3,8 @@ import Home from './HomeComponent';
 import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
+import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
+import SurveyScreen from '../screens/SurveyScreen';
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
 import { createStackNavigator, createDrawerNavigator, createAppContainer,StackActions,NavigationActions } from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -110,7 +112,26 @@ const StatsNavigator = createStackNavigator({
     })
 });
 
-
+const stackNav = createStackNavigator({
+    Survey: {
+        screen: SurveyScreen
+    },
+    SurveyCompleted: {
+        screen: SurveyCompletedScreen
+    },
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+          backgroundColor: "#512DA8"
+      },
+      headerTitleStyle: {
+          color: "#fff"            
+      },
+      headerTintColor: "#fff",
+      headerLeft: <Icon name="menu" size={24}
+        color= 'white'
+        onPress={ () => navigation.toggleDrawer() } />  
+    })
+});
 
 const MainNavigator = createDrawerNavigator({
     // Start: 
@@ -174,6 +195,21 @@ const MainNavigator = createDrawerNavigator({
             />
           ),
         }, 
+      },
+    Survey: 
+      { screen: stackNav,
+        navigationOptions: {
+          title: 'Survey',
+          drawerLabel: 'Survey',
+          drawerIcon: ({ tintColor, focused }) => (
+            <Icon
+              name='home'
+              type='font-awesome'            
+              size={24}
+              color={tintColor}
+            />
+          ),
+        },
       }
 }, {
   drawerBackgroundColor: '#D1C4E9'
