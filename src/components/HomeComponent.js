@@ -30,6 +30,7 @@ class Home extends Component {
                     // Set custom calendarWidth.
                     calendarWidth={Dimensions.get('window').width}
                     maxDate = {new Date()}
+                    hideArrows={false}
                     onDayPress={(day)=>{this.d = "ddd"}}
                 />
                 <DailySummaryComponent day="kkk"/>
