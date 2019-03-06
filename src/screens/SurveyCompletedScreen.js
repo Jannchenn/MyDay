@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { db } from '../config';
+import Home from '../components/HomeComponent';
 
 const GREEN = 'rgba(141,196,63,1)';
 const PURPLE = 'rgba(108,48,237,1)';
@@ -25,7 +26,7 @@ export default class SurveyCompletedScreen extends Component {
 
     render() {
         const answers = this.props.navigation.getParam('surveyAnswers', defaultAnswers);
-        db.ref('/items').push(answers);
+        db.ref('/survey').push(answers);
 
         return (
             <View style={styles.background}>
@@ -40,6 +41,11 @@ export default class SurveyCompletedScreen extends Component {
                     <Text style={styles.questionText}>Question 7: {answers.question7.optionText}</Text>
                     <Text style={styles.questionText}>Question 8: {answers.question8.optionText}</Text>
                 </View>
+                <Button
+                    onPress={() => this.props.navigation.navigate('Home')}
+                    title="Finish"
+                    color="white"
+                />
             </View>
         );
     }
