@@ -1,10 +1,7 @@
 import React, { Component } from 'react';  
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
-import Main from './MainComponent';
-import AppContainer from './MainComponent'
-
-
+import MainNavigator from './MainComponent';
 
 class Welcome extends Component {  
   render() {
@@ -40,20 +37,12 @@ class Welcome extends Component {
   }
 }
 
-class HomeScreen extends Component {
-    render() {
-        return (
-            <AppContainer/>
-        );
-    }  
-}
-
 const AppNavigator = createStackNavigator({
     Start: {
       screen: Welcome,
     },
     Home: {
-      screen: HomeScreen,
+      screen: MainNavigator,
     },
   }, {
     defaultNavigationOptions: {

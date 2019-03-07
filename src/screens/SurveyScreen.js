@@ -19,22 +19,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Calmness', 'Happiness']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Anxiety', 'Depression', 'Anger']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Anxiety', 'Depression', 'Anger']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Anxiety', 'Depression', 'Anger']
             }
         ]
@@ -47,22 +47,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Calmness', 'Happiness']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Anxiety', 'Depression']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Anxiety', 'Depression']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Anxiety', 'Depression']
             }
         ]
@@ -75,22 +75,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Happiness', 'Motivation']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Depression']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Depression']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Depression']
             }
         ]
@@ -103,22 +103,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Calmness', 'Motivation'] 
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Anxiety', 'Anger']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Anxiety', 'Anger']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Anxiety', 'Anger']
             }
         ]
@@ -131,22 +131,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Calmness']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Anxiety']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Anxiety']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Anxiety']
             }
         ]
@@ -159,22 +159,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '4',
+                value: 4,
                 category: ['Calmness']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Anxiety']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Anxiety']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Anxiety']
             }
         ]
@@ -187,22 +187,22 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '1',
+                value: 1,
                 category: ['Happiness', 'Motivation']
             },
             {
                 optionText: 'Several days',
-                value: '2',
+                value: 2,
                 category: ['Depression']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
+                value: 3,
                 category: ['Depression']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
+                value: 4,
                 category: ['Depression']
             }
         ]
@@ -215,23 +215,23 @@ const survey = [
         options: [
             {
                 optionText: 'Not at all',
-                value: '1',
-                category: Array('Motivation', 'Happiness')
+                value: 1,
+                category: ['Motivation', 'Happiness']
             },
             {
                 optionText: 'Several days',
-                value: '2',
-                category: Array('Depression', 'Anger')
+                value: 2,
+                category: ['Depression', 'Anger']
             },
             {
                 optionText: 'More than half the days',
-                value: '3',
-                category: Array('Depression', 'Anger')
+                value: 3,
+                category: ['Depression', 'Anger']
             },
             {
                 optionText: 'Nearly every day',
-                value: '4',
-                category: Array('Depression', 'Anger')
+                value: 4,
+                category: ['Depression', 'Anger']
             }
         ]
     },

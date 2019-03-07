@@ -6,43 +6,9 @@ import Stats from './StatsComponent';
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
-import { createStackNavigator, createDrawerNavigator, createAppContainer,StackActions,NavigationActions } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-
-class Welcome extends Component {  
-  render() {
-    return (
-    	<ImageBackground
-    		source={require('../images/background.jpg')}
-    		style={styles.container}>
-
-    		<View style={styles.overlayContainer}>
-
-    			<View style={styles.top}>
-    				<Text style={styles.header}>My Day</Text>
-    			</View>
-
-    			<View style={styles.menuContainer}>
-                    <Button 
-                        onPress={() => {
-                            this.props.navigation.dispatch(StackActions.reset({
-                                index: 0,
-                                actions: [
-                                  NavigationActions.navigate({ routeName: 'MainNavigator' })
-                                ],
-                              }))    
-                        }}
-                        title="START"
-                        color="#ffffff"
-                    />
-    			</View>
-    		</View>
-
-    	</ImageBackground>
-    );
-  }
-}
 
 const HomeNavigator = createStackNavigator({
     Home: { screen: Home },
@@ -133,7 +99,7 @@ const stackNav = createStackNavigator({
     })
 });
 
-const MainNavigator = createDrawerNavigator({
+export default MainNavigator = createDrawerNavigator({
     // Start: 
     // { screen: StartNavigator},
     Home: 
@@ -203,7 +169,7 @@ const MainNavigator = createDrawerNavigator({
           drawerLabel: 'Survey',
           drawerIcon: ({ tintColor, focused }) => (
             <Icon
-              name='home'
+              name='clipboard'
               type='font-awesome'            
               size={24}
               color={tintColor}
@@ -214,23 +180,6 @@ const MainNavigator = createDrawerNavigator({
 }, {
   drawerBackgroundColor: '#D1C4E9'
 });
-
-const AppContainer = createAppContainer(MainNavigator);
-
-class Main extends Component {
-
-    static navigationOptions = {
-        title: 'Main'
-    };
-
-    render() {
-        return(
-            <AppContainer />
-        );
-    }
-}
-
-export default Main;
 
 const styles = StyleSheet.create({  
 	container: {
