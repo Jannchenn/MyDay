@@ -28,6 +28,14 @@ export default class SurveyCompletedScreen extends Component {
         const answers = this.props.navigation.getParam('surveyAnswers', defaultAnswers);
         db.ref('/survey').push(answers);
 
+        cat1 = answers.question1.category;
+        db.ref('/chart').push(cat1);
+        for (let i = 0; i < cat1.length; ++i) {
+            var path = '/chart/' + cat1[i];
+            db.ref(path).set(10)
+            //db.ref(path).set(answers.question1.value);
+        }
+
         return (
             <View style={styles.background}>
                 <View style={styles.container}>
