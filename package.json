@@ -13,8 +13,10 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-calendars": "^1.22.0",
     "react-native-elements": "^1.0.0",
+    "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-simple-survey": "^1.1.0",
-    "react-navigation": "3.0.0"
+    "react-navigation": "3.0.0",
+    "tcomb-form-native": "^0.6.20"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"

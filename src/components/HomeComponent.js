@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
-import {Calendar, CalendarList} from 'react-native-calendars';
-import DailySummaryComponent from '../screens/DailySummaryComponent';
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import Welcome from '../screens/DailySummaryComponent';
+import AgendaView from '../react-native-calendars-master/src/agenda/index'
 
 // let thoughtRef = db.ref('/thought');
 // let tagsRef = db.ref('/tag');
@@ -17,26 +18,23 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.d = "";
+        this.state = {};
+        this.onDayPress = this.onDayPress.bind(this);
     }
 
     render() {
         return(
-            <View>
-                <CalendarList
-                    // Enable horizontal scrolling, default = false
-                    horizontal={true}
-                    // Enable paging on horizontal, default = false
-                    pagingEnabled={true}
-                    // Set custom calendarWidth.
-                    calendarWidth={Dimensions.get('window').width}
-                    maxDate = {new Date()}
-                    hideArrows={false}
-                    onDayPress={(day)=>{this.d = "ddd"}}
+                <AgendaView
+                    
                 />
-                <DailySummaryComponent day="kkk"/>
-            </View>
+                
         );
     }
+    onDayPress(day) {
+        this.setState({
+          selected: day.dateString
+        });
+      }
 }
 
 

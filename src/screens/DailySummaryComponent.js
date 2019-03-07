@@ -20,4 +20,4 @@ class DailySummaryComponent extends Component {
     }
 }
 
-export default DailySummaryComponent;
+export default Welcome;

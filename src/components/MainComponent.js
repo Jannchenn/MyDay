@@ -3,6 +3,7 @@ import Home from './HomeComponent';
 import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
+import General from './GeneralComponent';
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
@@ -99,6 +100,23 @@ const stackNav = createStackNavigator({
     })
 });
 
+const GeneralNavigator = createStackNavigator({
+  General: { screen: General }
+}, {
+  defaultNavigationOptions: ({ navigation }) => ({
+    headerStyle: {
+        backgroundColor: "#512DA8"
+    },
+    headerTitleStyle: {
+        color: "#fff"            
+    },
+    headerTintColor: "#fff",
+    headerLeft: <Icon name="menu" size={24}
+      color= 'white'
+      onPress={ () => navigation.toggleDrawer() } />  
+  })
+});
+
 export default MainNavigator = createDrawerNavigator({
     // Start: 
     // { screen: StartNavigator},
@@ -117,6 +135,36 @@ export default MainNavigator = createDrawerNavigator({
           ),
         }
       },
+      General: 
+        { screen: GeneralNavigator,
+          navigationOptions: {
+            title: 'General Info',
+            drawerLabel: 'General Info',
+            drawerIcon: ({ tintColor, focused }) => (
+              <Icon
+                name='address-card'
+                type='font-awesome'            
+                size={24}
+                color={tintColor}
+              />
+            ),
+          }, 
+        },
+      Survey: 
+        { screen: stackNav,
+          navigationOptions: {
+            title: 'Survey',
+            drawerLabel: 'Survey',
+            drawerIcon: ({ tintColor, focused }) => (
+              <Icon
+                name='home'
+                type='font-awesome'            
+                size={24}
+                color={tintColor}
+              />
+            ),
+          },
+        },
     Entry: 
       { screen: EntryNavigator,
         navigationOptions: {
@@ -161,21 +209,6 @@ export default MainNavigator = createDrawerNavigator({
             />
           ),
         }, 
-      },
-    Survey: 
-      { screen: stackNav,
-        navigationOptions: {
-          title: 'Survey',
-          drawerLabel: 'Survey',
-          drawerIcon: ({ tintColor, focused }) => (
-            <Icon
-              name='home'
-              type='font-awesome'            
-              size={24}
-              color={tintColor}
-            />
-          ),
-        },
       }
 }, {
   drawerBackgroundColor: '#D1C4E9'

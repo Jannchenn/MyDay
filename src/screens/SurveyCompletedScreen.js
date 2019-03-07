@@ -50,7 +50,6 @@ export default class SurveyCompletedScreen extends Component {
 
     render() {
         const answers = this.props.navigation.getParam('surveyAnswers', defaultAnswers);
-        db.ref('/survey').push(answers);
         //db.ref('/survey_copy').update({"2019-03-10":answers});
         addItem(answers);
 
