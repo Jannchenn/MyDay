@@ -4,6 +4,7 @@ import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
 import General from './GeneralComponent';
+import Health from './HealthKit'
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
@@ -60,6 +61,23 @@ const EntryNavigator = createStackNavigator({
         color= 'white'
         onPress={ () => navigation.toggleDrawer() } />  
     })
+});
+
+const FitNavigator = createStackNavigator({
+  Fit: { screen: Health }
+}, {
+  defaultNavigationOptions: ({ navigation }) => ({
+    headerStyle: {
+        backgroundColor: "#512DA8"
+    },
+    headerTitleStyle: {
+        color: "#fff"            
+    },
+    headerTintColor: "#fff",
+    headerLeft: <Icon name="menu" size={24}
+      color= 'white'
+      onPress={ () => navigation.toggleDrawer() } />  
+  })
 });
 
 const StatsNavigator = createStackNavigator({
@@ -180,6 +198,21 @@ export default MainNavigator = createDrawerNavigator({
           ),
         }, 
       },
+    Fit: 
+    { screen: FitNavigator,
+      navigationOptions: {
+        title: 'Fit',
+        drawerLabel: 'Fit',
+        drawerIcon: ({ tintColor, focused }) => (
+          <Icon
+            name='fire'
+            type='font-awesome'            
+            size={24}
+            color={tintColor}
+          />
+        ),
+      }, 
+    },
     Guide: 
       { screen: GuideNavigator,
         navigationOptions: {

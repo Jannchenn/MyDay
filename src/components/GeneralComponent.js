@@ -76,7 +76,7 @@ export default class General extends Component {
         "info": value
       });
     Alert.alert(
-        'Successful!',
+        'Success!',
         'Submit Successful',
         [
           {text: 'OK'}
