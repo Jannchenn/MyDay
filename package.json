@@ -15,6 +15,7 @@
     "react-native-elements": "^1.0.0",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
     "react-native-simple-survey": "^1.1.0",
+    "react-native-svg-charts": "^5.2.0",
     "react-navigation": "3.0.0",
     "tcomb-form-native": "^0.6.20"
   },
