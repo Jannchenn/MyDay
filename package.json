@@ -19,6 +19,7 @@
     "react-native-multiple-choice": "^0.0.8",
     "react-native-popup-dialog": "^0.17.0",
     "react-native-simple-survey": "^1.1.0",
+    "react-native-svg-charts": "^5.2.0",
     "react-navigation": "3.0.0",
     "rn-apple-healthkit": "^0.6.4",
     "rn-multiple-choice": "^0.0.5",
