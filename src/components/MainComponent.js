@@ -3,6 +3,7 @@ import Home from './HomeComponent';
 import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
+import Weather from './WeatherComponent';
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
@@ -63,6 +64,23 @@ const EntryNavigator = createStackNavigator({
 
 const StatsNavigator = createStackNavigator({
     Stats: { screen: Stats }
+  }, {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+          backgroundColor: "#512DA8"
+      },
+      headerTitleStyle: {
+          color: "#fff"            
+      },
+      headerTintColor: "#fff",
+      headerLeft: <Icon name="menu" size={24}
+        color= 'white'
+        onPress={ () => navigation.toggleDrawer() } />  
+    })
+});
+
+const WeatherNavigator = createStackNavigator({
+    Stats: { screen: Weather }
   }, {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
@@ -155,6 +173,21 @@ export default MainNavigator = createDrawerNavigator({
           drawerIcon: ({ tintColor, focused }) => (
             <Icon
               name='archive'
+              type='font-awesome'            
+              size={24}
+              color={tintColor}
+            />
+          ),
+        }, 
+      },
+    Weather: 
+      { screen: WeatherNavigator,
+        navigationOptions: {
+          title: 'Weather',
+          drawerLabel: 'Weather',
+          drawerIcon: ({ tintColor, focused }) => (
+            <Icon
+              name='sun-o'
               type='font-awesome'            
               size={24}
               color={tintColor}
