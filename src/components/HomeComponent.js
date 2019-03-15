@@ -6,6 +6,8 @@ import { db } from '../config'
 // let thoughtRef = db.ref('/thought');
 // let tagsRef = db.ref('/tag');
 let infoRef = db.ref('/person/info');
+let fitRef = db.ref('/fit');
+let weather = db.ref('/weather');
 
 var d = "";
 
@@ -32,6 +34,44 @@ class Home extends Component {
           this.state.info["height"] = data.Height;
           this.state.info["weight"] = data.Weight;
         });
+
+        fitRef.once("value", snapshot => {
+          snapshot.forEach(childSnapshot => {
+            var date = childSnapshot.key;
+            var childData = childSnapshot.val();
+            if (!this.state.items[date]) {
+              this.state.items[date] = [];
+            }
+            this.state.items[date].push({
+              name: 'Exercise: ' + childData.exercise + "\n" + 'Step: ' + childData.step.toString(),
+              height: 50
+            })
+          })
+          const newItems = {};
+          Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
+          this.setState({
+            items: newItems
+          });
+        });
+
+        weather.once("value", snapshot => {
+          snapshot.forEach(childSnapshot => {
+            var date = childSnapshot.key;
+            var childData = childSnapshot.val();
+            if (!this.state.items[date]) {
+              this.state.items[date] = [];
+            }
+            this.state.items[date].push({
+              name: 'Mood: ' + childData.mood + "\nTemperature: " + childData.temperature.toString() + "\nWeather" + childData.weather,
+              height: 100
+            })
+          })
+          const newItems = {};
+          Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
+          this.setState({
+            items: newItems
+          });
+        });
       }
 
     render() {
@@ -53,13 +93,6 @@ class Home extends Component {
             const strTime = this.timeToString(time);
             if (!this.state.items[strTime]) {
               this.state.items[strTime] = [];
-            //   const numItems = Math.floor(Math.random() * 5);
-            //   for (let j = 0; j < numItems; j++) {
-            //     this.state.items[strTime].push({
-            //       name: 'Item for ' + strTime,
-            //       height: Math.max(50, Math.floor(Math.random() * 150))
-            //     });
-            //   }
             }
           }
           //console.log(this.state.items);

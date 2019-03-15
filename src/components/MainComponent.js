@@ -4,6 +4,7 @@ import Guide from './GuideComponent';
 import Entry from './EntryComponent';
 import Stats from './StatsComponent';
 import General from './GeneralComponent';
+import Weather from './WeatherComponent';
 import Health from './HealthKit'
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
@@ -44,6 +45,23 @@ const GuideNavigator = createStackNavigator({
         color= 'white'
         onPress={ () => navigation.toggleDrawer() } />  
     })
+});
+
+const WeatherNavigator = createStackNavigator({
+  Stats: { screen: Weather }
+}, {
+  defaultNavigationOptions: ({ navigation }) => ({
+    headerStyle: {
+        backgroundColor: "#512DA8"
+    },
+    headerTitleStyle: {
+        color: "#fff"            
+    },
+    headerTintColor: "#fff",
+    headerLeft: <Icon name="menu" size={24}
+      color= 'white'
+      onPress={ () => navigation.toggleDrawer() } />  
+  })
 });
 
 const EntryNavigator = createStackNavigator({
@@ -138,36 +156,6 @@ const GeneralNavigator = createStackNavigator({
 export default MainNavigator = createDrawerNavigator({
     // Start: 
     // { screen: StartNavigator},
-    Home: 
-      { screen: HomeNavigator,
-        navigationOptions: {
-          title: 'Home',
-          drawerLabel: 'Home',
-          drawerIcon: ({ tintColor, focused }) => (
-            <Icon
-              name='home'
-              type='font-awesome'            
-              size={24}
-              color={tintColor}
-            />
-          ),
-        }
-      },
-      General: 
-        { screen: GeneralNavigator,
-          navigationOptions: {
-            title: 'General Info',
-            drawerLabel: 'General Info',
-            drawerIcon: ({ tintColor, focused }) => (
-              <Icon
-                name='address-card'
-                type='font-awesome'            
-                size={24}
-                color={tintColor}
-              />
-            ),
-          }, 
-        },
       Survey: 
         { screen: stackNav,
           navigationOptions: {
@@ -175,7 +163,7 @@ export default MainNavigator = createDrawerNavigator({
             drawerLabel: 'Survey',
             drawerIcon: ({ tintColor, focused }) => (
               <Icon
-                name='home'
+                name='clipboard'
                 type='font-awesome'            
                 size={24}
                 color={tintColor}
@@ -183,6 +171,21 @@ export default MainNavigator = createDrawerNavigator({
             ),
           },
         },
+      General: 
+      { screen: GeneralNavigator,
+        navigationOptions: {
+          title: 'General Info',
+          drawerLabel: 'General Info',
+          drawerIcon: ({ tintColor, focused }) => (
+            <Icon
+              name='address-card'
+              type='font-awesome'            
+              size={24}
+              color={tintColor}
+            />
+          ),
+        }, 
+      },
     Entry: 
       { screen: EntryNavigator,
         navigationOptions: {
@@ -198,6 +201,21 @@ export default MainNavigator = createDrawerNavigator({
           ),
         }, 
       },
+    Weather: 
+    { screen: WeatherNavigator,
+      navigationOptions: {
+        title: 'Weather',
+        drawerLabel: 'Weather',
+        drawerIcon: ({ tintColor, focused }) => (
+          <Icon
+            name='sun-o'
+            type='font-awesome'            
+            size={24}
+            color={tintColor}
+          />
+        ),
+      }, 
+    },
     Fit: 
     { screen: FitNavigator,
       navigationOptions: {
@@ -213,6 +231,21 @@ export default MainNavigator = createDrawerNavigator({
         ),
       }, 
     },
+    Home: 
+      { screen: HomeNavigator,
+        navigationOptions: {
+          title: 'Home',
+          drawerLabel: 'Home',
+          drawerIcon: ({ tintColor, focused }) => (
+            <Icon
+              name='home'
+              type='font-awesome'            
+              size={24}
+              color={tintColor}
+            />
+          ),
+        }
+      },
     Guide: 
       { screen: GuideNavigator,
         navigationOptions: {

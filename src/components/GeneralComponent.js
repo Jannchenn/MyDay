@@ -83,6 +83,7 @@ export default class General extends Component {
         ],
         {cancelable: false},
       );
+      this.props.navigation.navigate('Fit')
   }
 
   static navigationOptions = {

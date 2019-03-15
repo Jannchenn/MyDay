@@ -1,6 +1,6 @@
 import React from "react";
 import { Pedometer } from "expo";
-import { StyleSheet, Text, View, Alert } from "react-native";
+import { StyleSheet, Text, View, Alert, Button } from "react-native";
 import MultipleChoice from 'rn-multiple-choice';
 import { db } from '../config';
 
@@ -48,6 +48,7 @@ export default class Health extends React.Component {
         ]
     );
     this.addItem(option)
+    this.props.navigation.navigate('Home')
   }
   
 
@@ -124,6 +125,11 @@ export default class Health extends React.Component {
             selectedOptions={['No']}
             maxSelectedOptions={1}
             onSelection={this.handleSelect}
+        />
+        <Button
+            onPress={() => this.props.navigation.navigate('Home')}
+            title="Go to Home Page"
+            color="black"
         />
 
       </View>
