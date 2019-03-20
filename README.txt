@@ -7,11 +7,11 @@ MyDay/src
 ├── App.js
 ├── components
 │   ├── EntryComponent.js
-│   ├── GeneralComponent.js
+│   ├── GeneralComponent.js     # Prompts user to answer general questions about self and stores info into db.
 │   ├── GuideComponent.js
 │   ├── HealthKit.js     # Retrieves and displays total steps taken during day by user and stores info in db along with answer to question.
 │   ├── HomeComponent.js     # Diplays calendar with saved user input for selected date that is retrieved from db. 
-│   ├── MainComponent.js
+│   ├── MainComponent.js     # Creates and displays navigation bar that allows user to navigate to different features of the app.
 │   ├── StartComponent.js
 │   ├── StatsComponent.js
 │   ├── Weather.js     # Displays weather and temperature on screen and stores in database along with user's response to question.
