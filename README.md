@@ -4,3 +4,6 @@
 yarn start
 
 ## Description for each file
+### SurveyScreen.js + SurveyCompletedScreen.js
+
+### Weather.js + WeatherComponent.js
