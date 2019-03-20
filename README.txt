@@ -19,7 +19,7 @@ MyDay/src
 ├── config.js     # Initializes Firebase db in application with appropriate configurations.
 ├── images
 │   └── background.jpg     # Image that is first displayed upon app startup.
-├── react-native-calendars-master
+├── react-native-calendars-master     # Calendar package installed to build calendar on home page.
 ├── screens
     ├── DailySummaryComponent.js
     ├── FoodComponent.js
