@@ -4,7 +4,7 @@ How you start running the program:
    yarn start
 
 MyDay/src
-├── App.js     # Executes overall functionality of entirety of the app.
+├── App.js     # Executes overall functionality of the app.
 ├── components
 │   ├── EntryComponent.js
 │   ├── GeneralComponent.js     # Prompts user to answer general questions about self and stores info into db.
