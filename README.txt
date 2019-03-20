@@ -6,9 +6,9 @@ How you start running the program:
 MyDay/src
 ├── App.js     # Executes overall functionality of the app.
 ├── components
-│   ├── EntryComponent.js
+│   ├── EntryComponent.js       
 │   ├── GeneralComponent.js     # Prompts user to answer general questions about self and stores info into db.
-│   ├── GuideComponent.js
+│   ├── GuideComponent.js       # Render FoodComponent, which shows a list of food recommendation
 │   ├── HealthKit.js     # Retrieves and displays total steps taken during day by user and stores info in db along with answer to question.
 │   ├── HomeComponent.js     # Diplays calendar with saved user input for selected date that is retrieved from db. 
 │   ├── MainComponent.js     # Creates and displays navigation bar that allows user to navigate to different features of the app.
@@ -21,7 +21,6 @@ MyDay/src
 │   └── background.jpg     # Image that is first displayed upon app startup.
 ├── react-native-calendars-master     # Calendar package installed to build calendar on home page.
 ├── screens
-    ├── DailySummaryComponent.js
-    ├── FoodComponent.js
+    ├── FoodComponent.js             # Get food from the database, and put them into CardList format
     ├── SurveyCompletedScreen.js     # Displays user's answers to survey questions and adds them to the db along with associated score.
     └── SurveyScreen.js     # Displays survey questions to user and prompts user to select one of four choices.
