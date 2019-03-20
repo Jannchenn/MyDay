@@ -7,6 +7,7 @@ yarn start
 
 
 MyDay/src
+├── App.js
 ├── components
 │   ├── EntryComponent.js
 │   ├── GeneralComponent.js
