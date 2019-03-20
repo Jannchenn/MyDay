@@ -18,7 +18,7 @@ MyDay/src
 │   └── WeatherComponent.js     # Retrieves weather of user's current location using OpenWeather API.
 ├── config.js     # Initializes Firebase db in application with appropriate configurations.
 ├── images
-│   └── background.jpg
+│   └── background.jpg     # Image that is first displayed upon app startup.
 ├── react-native-calendars-master
 ├── screens
     ├── DailySummaryComponent.js
