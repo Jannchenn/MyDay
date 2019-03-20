@@ -11,6 +11,7 @@ MyDay/src
 │   ├── GuideComponent.js       # Render FoodComponent, which shows a list of food recommendation
 │   ├── HealthKit.js     # Retrieves and displays total steps taken during day by user and stores info in db along with answer to question.
 │   ├── HomeComponent.js     # Diplays calendar with saved user input for selected date that is retrieved from db. 
+│   ├── TagComponent.js # Represents one tag component out of all emotional tags shown in DailyTags file.
 │   ├── MainComponent.js     # Creates and displays navigation bar that allows user to navigate to different features of the app.
 │   ├── StartComponent.js     # Component that is first visible when user enters app. User must click start to proceed to app.
 │   ├── StatsComponent.js     # Displays the daily averages for each mood, and recommends food based on the averages. 
@@ -23,7 +24,7 @@ MyDay/src
 ├── screens
     ├── FoodComponent.js             # Get food from the database, and put them into CardList format
     ├── SurveyCompletedScreen.js     # Displays user's answers to survey questions and adds them to the db along with associated score.
-    ├── GeoLocation.js # Fetches nearby therapists to the user's current location by calling Google Places API.
+    ├── TherapistsComponent.js # Fetches nearby therapists to the user's current location by calling Google Places API.
     ├── DailyTags.js # Displays tags based on different moods to user and prompts user to select those that match user's current mood.
     ├── ThoughtsForm.js # Diary format allowing user to enter their thoughts into the app. 
     └── SurveyScreen.js     # Displays survey questions to user and prompts user to select one of four choices.
