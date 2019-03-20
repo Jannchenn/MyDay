@@ -13,7 +13,7 @@ MyDay/src
 │   ├── HomeComponent.js     # Diplays calendar with saved user input for selected date that is retrieved from db. 
 │   ├── MainComponent.js     # Creates and displays navigation bar that allows user to navigate to different features of the app.
 │   ├── StartComponent.js     # Component that is first visible when user enters app. User must click start to proceed to app.
-│   ├── StatsComponent.js
+│   ├── StatsComponent.js     # Displays the daily averages for each mood, and recommends food based on the averages. 
 │   ├── Weather.js     # Displays weather and temperature on screen and stores in database along with user's response to question.
 │   └── WeatherComponent.js     # Retrieves weather of user's current location using OpenWeather API.
 ├── config.js     # Initializes Firebase db in application with appropriate configurations.
