@@ -23,4 +23,7 @@ MyDay/src
 ├── screens
     ├── FoodComponent.js             # Get food from the database, and put them into CardList format
     ├── SurveyCompletedScreen.js     # Displays user's answers to survey questions and adds them to the db along with associated score.
+    ├── GeoLocation.js # Fetches nearby therapists to the user's current location by calling Google Places API.
+    ├── DailyTags.js # Displays tags based on different moods to user and prompts user to select those that match user's current mood.
+    ├── ThoughtsForm.js # Diary format allowing user to enter their thoughts into the app. 
     └── SurveyScreen.js     # Displays survey questions to user and prompts user to select one of four choices.
