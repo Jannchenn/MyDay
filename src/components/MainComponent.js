@@ -8,6 +8,8 @@ import Weather from './WeatherComponent';
 import Health from './HealthKit'
 import SurveyCompletedScreen from '../screens/SurveyCompletedScreen';
 import SurveyScreen from '../screens/SurveyScreen';
+import TherapistComponent from '../screens/TherapistComponent'
+import DailyTags from '../screens/DailyTags'
 import { StyleSheet, ImageBackground, Button, View, Text } from 'react-native';
 import { createStackNavigator, createDrawerNavigator} from 'react-navigation';
 import { Icon } from 'react-native-elements';
@@ -32,6 +34,40 @@ const HomeNavigator = createStackNavigator({
 
 const GuideNavigator = createStackNavigator({
     Guide: { screen: Guide }
+  }, {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+          backgroundColor: "#512DA8"
+      },
+      headerTitleStyle: {
+          color: "#fff"            
+      },
+      headerTintColor: "#fff",
+      headerLeft: <Icon name="menu" size={24}
+        color= 'white'
+        onPress={ () => navigation.toggleDrawer() } />  
+    })
+});
+
+const TagsNavigator = createStackNavigator({
+    DailyTags: { screen: DailyTags }
+  }, {
+    defaultNavigationOptions: ({ navigation }) => ({
+      headerStyle: {
+          backgroundColor: "#512DA8"
+      },
+      headerTitleStyle: {
+          color: "#fff"            
+      },
+      headerTintColor: "#fff",
+      headerLeft: <Icon name="menu" size={24}
+        color= 'white'
+        onPress={ () => navigation.toggleDrawer() } />  
+    })
+});
+
+const TherapistNavigator = createStackNavigator({
+    Guide: { screen: TherapistComponent }
   }, {
     defaultNavigationOptions: ({ navigation }) => ({
       headerStyle: {
@@ -231,6 +267,21 @@ export default MainNavigator = createDrawerNavigator({
         ),
       }, 
     },
+    DailyTags: 
+    { screen: TagsNavigator,
+      navigationOptions: {
+        title: 'Daily Tags',
+        drawerLabel: 'Daily Tags',
+        drawerIcon: ({ tintColor, focused }) => (
+          <Icon
+            name='tags'
+            type='font-awesome'            
+            size={24}
+            color={tintColor}
+          />
+        ),
+      }, 
+    },
     Home: 
       { screen: HomeNavigator,
         navigationOptions: {
@@ -254,6 +305,21 @@ export default MainNavigator = createDrawerNavigator({
           drawerIcon: ({ tintColor, focused }) => (
             <Icon
               name='book'
+              type='font-awesome'            
+              size={24}
+              color={tintColor}
+            />
+          ),
+        }, 
+      },
+    TherapistComponent: 
+      { screen: TherapistNavigator,
+        navigationOptions: {
+          title: 'Find Therapists',
+          drawerLabel: 'Find Therapists',
+          drawerIcon: ({ tintColor, focused }) => (
+            <Icon
+              name='user-md'
               type='font-awesome'            
               size={24}
               color={tintColor}
