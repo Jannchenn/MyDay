@@ -1,6 +1,6 @@
 App Name: MyDay
 
-How you start run the program:
+How you start running the program:
    yarn start
 
 MyDay/src
